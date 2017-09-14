@@ -23,7 +23,7 @@ class ConvLSTMCell(nn.Module):
 
         combined = torch.cat((input, h), dim=1)
         A = self.conv(combined)
-        (ai, af, ao, ag) = torch.split(A, A.size()[1] / self.num_features, dim=1)
+        (ai, af, ao, ag) = torch.split(A, int(A.size()[1] / self.num_features), dim=1)
         i = torch.sigmoid(ai)
         f = torch.sigmoid(af)
         o = torch.sigmoid(ao)
