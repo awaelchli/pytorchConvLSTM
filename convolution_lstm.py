@@ -8,7 +8,7 @@ class ConvLSTMCell(nn.Module):
     def __init__(self, input_channels, hidden_channels, kernel_size, bias=True):
         super(ConvLSTMCell, self).__init__()
 
-        assert hidden_channels % 2 == 0
+        #assert hidden_channels % 2 == 0
 
         self.input_channels = input_channels
         self.hidden_channels = hidden_channels
